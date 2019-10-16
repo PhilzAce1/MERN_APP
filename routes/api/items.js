@@ -29,7 +29,7 @@ router.post('/', (req, res)=>{
  @access Public
  */
 router.delete('/:id', (req, res)=>{
-    Item.findOne(req.params.id)
+    Item.findById(req.params.id)
     .then(item => item.remove().then(() => res.json({success:true})).catch(err => console.log(err)))
     .catch(err => res.status(404).json({success: false}))
     
