@@ -17,9 +17,9 @@ mongoose.connect('mongodb+srv://Philemon:philzpy162@mernshopping-tstp9.mongodb.n
 
 app.use('/api/items', items)
 
-// Serve Static Assests ..if we are in Production
-if(process.env.NODE_ENV === 'production'){
-  //set a static folder
+// // Serve Static Assests ..if we are in Production
+// if(process.env.NODE_ENV === 'production'){
+//   //set a static folder
   app.use(express.static(path.join(__dirname, "client", "build")))
 
   
@@ -31,7 +31,7 @@ if(process.env.NODE_ENV === 'production'){
   // app.get('*', (req, res)=>{
   //   res.sendFile(path.resolve(__dirname,'client', 'build', 'index.html'))
   // })
-}
+// }
 
 const port = process.env.PORT || 5000;
 
