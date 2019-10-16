@@ -11,7 +11,7 @@ const {DB} = process.env
 
 app.use(bodyParser.json());
 
-mongoose.connect(DB,{useNewUrlParser:true,useUnifiedTopology: true,})
+mongoose.connect('mongodb+srv://Philemon:philzpy162@mernshopping-tstp9.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser:true,useUnifiedTopology: true,})
 .then(() => {console.log('Connected to DB')})
 .catch(err => console.log(err))
 
@@ -26,7 +26,7 @@ if(process.env.NODE_ENV === 'production'){
   })
 }
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 
 
 app.listen(port, () => console.log(`Server running on port ${port} 🔥`));
