@@ -16,7 +16,7 @@ class ShoppingList extends Component {
         const { items } = this.props.item;
         return (
             <Container>
-                 <ListGroup style={{marginTop:"2rem"}}>
+                 <ListGroup style={{marginTop:"2rem "}}>
                     <TransitionGroup className="shopping-list">
                         {items.map(({ _id, name })=>{return(
                         <CSSTransition key={_id} timeout={500} classNames="fade">
