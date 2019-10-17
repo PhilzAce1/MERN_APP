@@ -1,21 +1,22 @@
 require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const items = require('./routes/api/items');
+const users = require('./routes/api/users')
 const path = require('path');
 
 const app = express();
 
 const {DB} = process.env
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 mongoose.connect('mongodb+srv://Philemon:philzpy162@mernshopping-tstp9.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser:true,useUnifiedTopology: true,})
 .then(() => {console.log('Connected to DB')})
 .catch(err => console.log(err))
 
 app.use('/api/items', items)
+app.use('/api/users', users)
 
 // // Serve Static Assests ..if we are in Production
 if(process.env.NODE_ENV === 'production'){

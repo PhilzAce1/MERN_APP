@@ -42,7 +42,7 @@ class ItemModal extends Component {
     render(){
         return(
             <div color="dark"style={{marginBottom:'2rem'}} onClick={this.toggle}>
-                <Button>Add Item </Button>
+                <Button style={{marginTop: "2rem"}}>Add Item </Button>
                 <Modal isOpen={this.state.modal}toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}> Add to Shopping List</ModalHeader>
                     <ModalBody>

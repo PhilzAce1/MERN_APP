@@ -7,11 +7,12 @@
     "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
+    "cloned": "npm install && npm install --prefix client",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "quick-develop":"git add . && git commit -m 'quick save' && git push heroku master"
+    "quick-develop": "git add . && git commit -m 'quick save' && git push heroku master"
   },
   "keywords": [
     "MERN",
@@ -21,11 +22,12 @@
   "author": "Akuagwu Philemon",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "bcryptjs": "^2.4.3",
     "bootstrap": "^4.3.1",
     "concurrently": "^5.0.0",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.5",
     "react-bootstrap": "^0.32.4"
   },
